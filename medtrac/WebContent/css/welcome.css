@@ -1,0 +1,20 @@
+body {
+	background-position:center;
+	background-repeat:no-repeat;
+	background-image : url("images/rmbkgnd.jpg");
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover
+}
+
+P { text-align: center }
+
+P.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 200%;
+    width: 20em;
+    color: white
+}

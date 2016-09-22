@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Observation Chart</title>
+	<link href='css/common.css' rel='stylesheet' type='text/css' />
+	<link href='css/observationchart.css' rel='stylesheet' type='text/css' />
+	<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<!--#include file="navbar.html" -->
+	<script src="js/d3.min.js"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<!-- <script src="js/modernizr-custom.js"></script> -->
+	<script src="js/observationchart.js"></script>
+	<script src="js/searchpatient.js"></script>
+	<script src="js/common.js"></script>
+	<script>
+		check_login();
+	</script>
+    <script>
+    	$(function() {
+        	$( "#date" ).datepicker({
+        		dateFormat: 'yy-mm-dd',
+        		changeMonth: true,
+                changeYear: true
+        	});
+    	});
+    </script>
+	<div class="content">
+		<section>
+			<h2>Observation Chart</h2>
+			<label for="patient_id">Patient ID</label>
+			<select class="select" id="patient_id" onclick="search_patient('patient_id'); this.onclick=null;" required></select>
+			<div class="clear"></div>
+			<label for="date">Date</label>
+			<input type="text" class="input" id="date"></input>
+			<div class="clear"></div>
+			<button type="button" class="button" id="query" onclick="query()">Query</button><br>
+		</section>
+		<div id="obschart"></div>
+		<script>
+			var gridChart = d3.select("#obschart")
+		    	.append("svg:svg")
+		    	.attr("width", width)     // Set width of the SVG canvas
+		    	.attr("height", height);   // Set height of the SVG canvas
+			drawobschart();
+		</script>
+	</div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Monitor Scheduling</title>
+	<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<link href="css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css" />
+	<link href="css/common.css" rel="stylesheet" type="text/css" />
+	<link href="css/monitor.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<!--#include file="navbar.html" -->
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<!-- <script src="js/modernizr-custom.js"></script> -->
+	<script src="js/jquery-ui-timepicker-addon.js"></script>
+	<script src="js/searchpatient.js"></script>
+	<script src="js/common.js"></script>
+	<script>
+		check_login();
+	</script>
+    <script>
+     	$(function() {
+        	$( "#start_date_time" ).datetimepicker({
+        		dateFormat: 'yy-mm-dd',
+         		controlType: 'select',
+        		oneLine: true,
+       		});
+        	$( "#end_date_time" ).datetimepicker({
+         		dateFormat: 'yy-mm-dd',
+         		controlType: 'select',
+         		oneLine: true,
+       		});
+    	});
+    </script>
+	<div id="monitor" class="content">
+	<section>
+		<h2>Set Schedule</h2>
+		<form name="schedule_form" onsubmit="apply()">
+			<label for="patient_id">Enter Patient ID:</label>
+	 		<select class="select" id="patient_id" onclick="search_patient(); this.onclick=null;" required></select>
+	 		<div class="clear"></div>
+	 		<label for="box_id_monitor">Medbox ID:</label>
+	 		<select class="select" id="box_id_monitor" required>
+	 			<option value="40a36bc10566">40a36bc10566</option>
+	 			<option value="40a36bc1055b">40a36bc1055b</option>
+	 			<option value="40a36bc10567">40a36bc10567</option>
+	 			<option value="40a36bc10568">40a36bc10568</option>
+				<option value="40a36bc1055a">40a36bc1055a</option>			
+	 		</select>
+	 		<div class="clear"></div>
+	 		<label for="start_date_time">Start Date and Time:</label>
+			<input type="text" class="input" id="start_date_time" required></input>
+			<div class="clear"></div>
+			<label for="end_date_time">End Date and Time:</label>
+			<input type="text" class="input" id="end_date_time" required></input>
+			<div class="clear"></div>
+			<label for="interval">Interval:</label>
+			<select class="select" id="interval" required>
+				<option value="5">5 mins</option>
+				<option value="15">15 mins</option>
+				<option value="30">30 mins</option>
+				<option value="45">45 mins</option>
+				<option value="60">60 mins</option>
+				<option value="240">Clinical</option>
+	 		</select>
+	 		<label for="temperature_checkbox">Temperature</label>
+	 		<input type="checkbox" id="temperature_checkbox" checked></input>
+			<div class="clear"></div>
+			<label for="bp_checkbox">Blood Pressure</label>
+			<input type="checkbox" id="bp_checkbox" checked></input>
+			<div class="clear"></div>
+			<label for="bp_checkbox">O2 and Pulse</label>
+			<input type="checkbox" id="O2_checkbox" checked></input>
+			<div class="clear"></div>
+			<input type="submit" class="button" id="save_and_apply" value="Save and Apply" ></input><br>
+			<!-- <button type="button" class="button" id="clear_selection" onclick="clear_selection()">Clear Selection</button><br>  -->
+		</form>
+		<br>
+		<!-- Start test immediately (For Testing) <button type="button" id="start_test" onclick="start_test()">Start Test</button><br>  -->
+	</section>
+		<table class="tg">
+		<caption style="text-align:left">Currently Active Schedules</caption>
+		  <tr>
+		    <th class="tg-yw4l">Medbox ID<br></th>
+		    <th class="tg-yw4l">Bed<br></th>
+		    <th class="tg-yw4l">Patient ID<br></th>
+		    <th class="tg-yw4l">Start Date Time</th>
+		    <th class="tg-yw4l">End Date Time<br></th>
+		    <th class="tg-yw4l">Interval<br></th>
+		  </tr>
+		  <tr>
+		    <td class="tg-yw4l" id="40a36bc10566">40a36bc10566</td>
+		    <td class="tg-yw4l" id="bed_1" >983</td>
+		    <td class="tg-yw4l" id="patientid_1" ></td>
+		    <td class="tg-yw4l" id="startdt_1"></td>
+		    <td class="tg-yw4l" id="enddt_1"></td>
+		    <td class="tg-yw4l" id="interval_1"></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-yw4l" id="40a36bc1055b">40a36bc1055b</td>
+		    <td class="tg-yw4l" id="bed_2" >985</td>
+		    <td class="tg-yw4l" id="patientid_2"></td>
+		    <td class="tg-yw4l" id="startdt_2"></td>
+		    <td class="tg-yw4l" id="enddt_2"></td>
+		    <td class="tg-yw4l" id="interval_2"></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-yw4l" id="40a36bc10567">40a36bc10567</td>
+		    <td class="tg-yw4l" id="bed_3" >982</td>
+		    <td class="tg-yw4l" id="patientid_3"></td>
+		    <td class="tg-yw4l" id="startdt_3"></td>
+		    <td class="tg-yw4l" id="enddt_3"></td>
+		    <td class="tg-yw4l" id="interval_3"></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-yw4l" id="40a36bc10568">40a36bc10568</td>
+		    <td class="tg-yw4l" id="bed_4" >987</td>
+		    <td class="tg-yw4l" id="patientid_4"></td>
+		    <td class="tg-yw4l" id="startdt_4"></td>
+		    <td class="tg-yw4l" id="enddt_4"></td>
+		    <td class="tg-yw4l" id="interval_4"></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-yw4l" id="40a36bc1055a">40a36bc1055a</td>
+		    <td class="tg-yw4l" id="bed_5" >990</td>
+		    <td class="tg-yw4l" id="patientid_5"></td>
+		    <td class="tg-yw4l" id="startdt_5"></td>
+		    <td class="tg-yw4l" id="enddt_5"></td>
+		    <td class="tg-yw4l" id="interval_5"></td>
+		  </tr>
+		</table>
+	</div>
+	<script src="js/monitor.js"></script>
+	<script>
+		get_active_schedule();
+	</script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Dashboard</title>
+	<link href="css/common.css" rel="stylesheet" type="text/css" />
+	<link href="css/dashboard.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<!--#include file="navbar.html" -->
+	<script src="js/common.js"></script>
+	<script>
+		check_login();
+	</script>
+	<div id="dashboard" class="content">
+	<div class="section group">
+		<div class="col span_1_of_4">
+			<table style="width:100%">
+				<thead>
+					<tr>
+						<th>Patient ID</th>
+						<td><input type="text" class="dinput" id="patientid_1" value="" size="12" readonly></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Bed</th>
+						<td><input type="text" class="bedID" id="bed_1" value="985" size="6" style="font-weight: bold" readonly></td>
+					</tr>
+					<tr>
+						<th>Unit ID</th>
+						<td><input type="text" class="dinput" id="boxid_1" value="A" size="12" readonly></td>
+					</tr>
+					<tr>
+                		<th>Time of Measurement</th>
+                		<td><input type="text" class="dinput" id="datetime_1" value="" size="20" readonly></input></td>
+            		</tr>
+		            <tr>
+		                <th>Temperature <img src='images/thermometer.png'></th>
+		                <td><input type="text" class="dinput" id="temperature_1" value="" size="6" readonly></input>C°</td>
+		            </tr>
+		            <tr>
+		                <th>Blood Pressure <img src='images/bp.png'></th>
+		                <td>Systolic:<input type="text" class="dinput" id="bphigh_1" value="" size="6" readonly></input>mmHg<br>
+		                Diastolic:<input type="text" class="dinput" id="bplow_1" value="" size="6" readonly></input>mmHg</td>
+		            </tr>
+		            <tr>
+		                <th>Pulse <img src='images/ecg.png'></th>
+		                <td><input type="text" class="dinput" id="pulse_1" value="" size="6" readonly></input>BPM</td>
+		            </tr>
+		            <tr>
+		                <th>SpO2 <img src='images/oxygen.png'></th>
+		                <td><input type="text" class="dinput" id="spo2_1" value="" size="6" readonly></input>%</td>
+		            </tr>
+            	</tbody>
+			</table> 
+		</div>
+		<div class="col span_1_of_4">
+			<table style="width:100%">
+				<thead>
+					<tr>
+						<th>Patient ID</th>
+						<td><input type="text" class="dinput" id="patientid_2" value="" size="12" readonly></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Bed</th>
+						<td><input type="text" class="bedID" id="bed_2" value="990" size="6" style="font-weight: bold" readonly></td>
+					</tr>
+					<tr>
+						<th>Unit ID</th>
+						<td><input type="text" class="dinput" id="boxid_2" value="B" size="12" readonly></td>
+					</tr>
+					<tr>
+                		<th>Time of Measurement</th>
+                		<td><input type="text" class="dinput" id="datetime_2" value="" size="20" readonly></input></td>
+            		</tr>
+		            <tr>
+		                <th>Temperature <img src='images/thermometer.png'></th>
+		                <td><input type="text" class="dinput" id="temperature_2" value="" size="6" readonly></input>C°</td>
+		            </tr>
+		            <tr>
+		                <th>Blood Pressure <img src='images/bp.png'></th>
+		                <td>Systolic:<input type="text" class="dinput" id="bphigh_2" value="" size="6" readonly></input>mmHg<br>
+		                Diastolic:<input type="text" class="dinput" id="bplow_2" value="" size="6" readonly></input>mmHg</td>
+		            </tr>
+		            <tr>
+		                <th>Pulse <img src='images/ecg.png'></th>
+		                <td><input type="text" class="dinput" id="pulse_2" value="" size="6" readonly></input>BPM</td>
+		            </tr>
+		            <tr>
+		                <th>SpO2 <img src='images/oxygen.png'></th>
+		                <td><input type="text" class="dinput" id="spo2_2" value="" size="6" readonly></input>%</td>
+		            </tr>
+            	</tbody>
+			</table>
+		</div>
+		<div class="col span_1_of_4">
+			<table style="width:100%">
+				<thead>
+					<tr>
+						<th>Patient ID</th>
+						<td><input type="text" class="dinput" id="patientid_3" value="" size="12" readonly></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Bed</th>
+						<td><input type="text" class="bedID" id="bed_3" value="977" size="6" style="font-weight: bold" readonly></td>
+					</tr>
+					<tr>
+						<th>Unit ID</th>
+						<td><input type="text" class="dinput" id="boxid_3" value="C" size="12" readonly></td>
+					</tr>
+					<tr>
+                		<th>Time of Measurement</th>
+                		<td><input type="text" class="dinput" id="datetime_3" value="" size="20" readonly></input></td>
+            		</tr>
+		            <tr>
+		                <th>Temperature <img src='images/thermometer.png'></th>
+		                <td><input type="text" class="dinput" id="temperature_3" value="" size="6" readonly></input>C°</td>
+		            </tr>
+		            <tr>
+		                <th>Blood Pressure <img src='images/bp.png'></th>
+		                <td>Systolic:<input type="text" class="dinput" id="bphigh_3" value="" size="6" readonly></input>mmHg<br>
+		                Diastolic:<input type="text" class="dinput" id="bplow_3" value="" size="6" readonly></input>mmHg</td>
+		            </tr>
+		            <tr>
+		                <th>Pulse <img src='images/ecg.png'></th>
+		                <td><input type="text" class="dinput" id="pulse_3" value="" size="6" readonly></input>BPM</td>
+		            </tr>
+		            <tr>
+		                <th>SpO2 <img src='images/oxygen.png'></th>
+		                <td><input type="text" class="dinput" id="spo2_3" value="" size="6" readonly></input>%</td>
+		            </tr>
+            	</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="section group">
+    	<div class="col span_1_of_4">
+			<table style="width:100%">
+				<thead>
+					<tr>
+						<th>Patient ID</th>
+						<td><input type="text" class="dinput" id="patientid_4" value="" size="12" readonly></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Bed</th>
+						<td><input type="text" class="bedID" id="bed_4" value="980" size="6" style="font-weight: bold" readonly></td>
+					</tr>
+					<tr>
+						<th>Unit ID</th>
+						<td><input type="text" class="dinput" id="boxid_4" value="D" size="12" readonly></td>
+					</tr>
+					<tr>
+                		<th>Time of Measurement</th>
+                		<td><input type="text" class="dinput" id="datetime_4" value="" size="20" readonly></input></td>
+            		</tr>
+		            <tr>
+		                <th>Temperature <img src='images/thermometer.png'></th>
+		                <td><input type="text" class="dinput" id="temperature_4" value="" size="6" readonly></input>C°</td>
+		            </tr>
+		            <tr>
+		                <th>Blood Pressure <img src='images/bp.png'></th>
+		                <td>Systolic:<input type="text" class="dinput" id="bphigh_4" value="" size="6" readonly></input>mmHg<br>
+		                Diastolic:<input type="text" class="dinput" id="bplow_4" value="" size="6" readonly></input>mmHg</td>
+		            </tr>
+		            <tr>
+		                <th>Pulse <img src='images/ecg.png'></th>
+		                <td><input type="text" class="dinput" id="pulse_4" value="" size="6" readonly></input>BPM</td>
+		            </tr>
+		            <tr>
+		                <th>SpO2 <img src='images/oxygen.png'></th>
+		                <td><input type="text" class="dinput" id="spo2_4" value="" size="6" readonly></input>%</td>
+		            </tr>
+            	</tbody>
+			</table>
+		</div>
+		<div class="col span_1_of_4">
+			<table style="width:100%">
+				<thead>
+					<tr>
+						<th>Patient ID</th>
+						<td><input type="text" class="dinput" id="patientid_5" value="" size="12" readonly></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Bed</th>
+						<td><input type="text" class="bedID" id="bed_5" value="988" size="6" style="font-weight: bold" readonly></td>
+					</tr>
+					<tr>
+						<th>Unit ID</th>
+						<td><input type="text" class="dinput" id="boxid_5" value="E" size="12" readonly></td>
+					</tr>
+					<tr>
+                		<th>Time of Measurement</th>
+                		<td><input type="text" class="dinput" id="datetime_5" value="" size="20" readonly></input></td>
+            		</tr>
+		            <tr>
+		                <th>Temperature <img src='images/thermometer.png'></th>
+		                <td><input type="text" class="dinput" id="temperature_5" value="" size="6" readonly></input>C°</td>
+		            </tr>
+		            <tr>
+		                <th>Blood Pressure <img src='images/bp.png'></th>
+		                <td>Systolic:<input type="text" class="dinput" id="bphigh_5" value="" size="6" readonly></input>mmHg<br>
+		                Diastolic:<input type="text" class="dinput" id="bplow_5" value="" size="6" readonly></input>mmHg</td>
+		            </tr>
+		            <tr>
+		                <th>Pulse <img src='images/ecg.png'></th>
+		                <td><input type="text" class="dinput" id="pulse_5" value="" size="6" readonly></input>BPM</td>
+		            </tr>
+		            <tr>
+		                <th>SpO2 <img src='images/oxygen.png'></th>
+		                <td><input type="text" class="dinput" id="spo2_5" value="" size="6" readonly></input>%</td>
+		            </tr>
+            	</tbody>
+			</table>
+		</div>
+	</div>
+	<script src="js/dashboard2.js"></script>
+	<script>
+		get_dashboard_patient();
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+#floorplan {
+    position: absolute;
+    top: 56px;
+    left: 20px;
+    width: 800px;
+    height: 900px;
+    z-index:0;
+}
+
+#menu {
+    position: absolute;
+    top: 0;
+    left: 801px;
+    width: 400px;
+    height: 700px;
+    z-index:0;
+}
+
+#config {
+    position: absolute;
+    top: 401px;
+    left: 801px;
+    width: 400px;
+    height: 300px;
+    z-index:0;
+}
+

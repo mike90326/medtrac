@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Clinical Chart</title>
+	<link href='css/common.css' rel='stylesheet' type='text/css' />
+	<link href='css/clinicalchart.css' rel='stylesheet' type='text/css' />
+	<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<!--#include file="navbar.html" -->
+	<script src="js/d3.min.js"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<!-- <script src="js/modernizr-custom.js"></script> -->
+	<script src="js/clinicalchart.js"></script>
+	<script src="js/searchpatient.js"></script>
+	<script src="js/common.js"></script>
+	<script>
+		check_login();
+	</script>
+    <script>
+    	$(function() {
+        	$( "#start_date" ).datepicker({
+        		dateFormat: 'yy-mm-dd',
+        		changeMonth: true,
+                changeYear: true,
+        		onSelect: function (selected) {
+                	var dtmin = new Date(selected);
+                	dtmin.setDate(dtmin.getDate() + 1);
+                	$("#end_date").datepicker("option", "minDate", dtmin);
+                	var dtmax = new Date(selected);
+                	dtmax.setDate(dtmax.getDate() + 5) // Date inclusive so add 5 days instead of 6
+                	$("#end_date").datepicker("option", "maxDate", dtmax);
+        		}
+            });
+        	$( "#end_date" ).datepicker({ 
+        		dateFormat: 'yy-mm-dd',
+        		changeMonth: true,
+                changeYear: true
+            });
+        });
+    </script>
+	<div class="content">
+		<section>
+			<h2>Clinical Chart</h2>
+			<label for="patient_id">Patient ID</label>
+			<select class="select" id="patient_id" onclick="search_patient('patient_id'); this.onclick=null;" required></select>
+			<div class="clear"></div>
+			<label for="start_date">Start Date</label>
+			<input type="text" class="input" id="start_date"></input>
+			<div class="clear"></div>
+			<label for="end_date">End Date</label>
+			<input type="text" class="input" id="end_date"></input>
+		    <div class="clear"></div>
+		    <button type="button" class="button" id="query" onclick="query()">Query</button>
+            <button href="javascript:void(0)" class="button" title="print" id="print">Print</button></br>
+	    </section>
+	    <div id="clinchart"></div>
+		<script>
+			var gridChart = d3.select("#clinchart")
+				.append("svg:svg")
+				.attr("width", width)     // Set width of the SVG canvas
+				.attr("height", height);   // Set height of the SVG canvas
+			drawclinchart();
+		</script>
+		<script src="js/printPartOfDocument.js"></script>
+		<script type="text/javascript">
+		new printPartOfDocument('print','clinchart');
+		</script>
+	</div>
+</body>
+</html>

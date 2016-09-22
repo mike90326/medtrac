@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>System Configuration</title>
+	<link href="css/common.css" rel="stylesheet" type="text/css" />
+	<link href="css/configuration.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<!--#include file="navbar.html" -->
+	<script src="js/configuration.js"></script>
+	<script src="js/common.js"></script>
+	<script>
+		check_login();
+	</script>
+	<div class="content">
+	<section>
+		<h2>Thresholds</h2>
+		<label for="temperature_warning">Temperature Warning (Yellow)</label>
+		<input type="text" id="temperature_warning" value="38.4" size="6" disabled></input>
+		<input type="checkbox" id="temperature_warning_cb" checked disabled></input>
+		<div class="clear"></div>
+		<label for="bpupper_warning">B.P. Upper Warning (Yellow)</label>
+		<input type="text" id="bpupper_warning" value="180" size="6" disabled></input>
+		<input type="checkbox" id="bpupper_warning_cb" checked disabled></input>
+		<div class="clear"></div>
+		<label for="bpupper_critical">B.P. Upper Critical (Red)</label>
+		<input type="text" id="bpupper_critical" value="200" size="6" disabled></input>
+		<input type="checkbox" id="bpupper_critical_cb" checked disabled></input>
+		<div class="clear"></div>
+		<label for="bplower_critical">B.P. Lower Critical (Red)</label>
+		<input type="text" id="bplower_critical" value="90" size="6" disabled></input>
+		<input type="checkbox" id="bplower_critical_cb" checked disabled></input>
+		<div class="clear"></div>
+		<label for="pulseupper_warning">Pulse Upper Warning (Yellow)</label>
+		<input type="text" id="pulseupper_warning" value="120" size="6" disabled></input>
+		<input type="checkbox" id="pulseupper_warning_cb" checked disabled></input>
+		<div class="clear"></div>
+		<label for="pulseupper_critical">Pulse Upper Critical (Red)</label>
+		<input type="text" id="pulseupper_critical" value="130" size="6" disabled></input>
+		<input type="checkbox" id="pulseupper_critical_cb" checked disabled></input>
+		<div class="clear"></div>
+		<label for="pulselower_warning">Pulse Lower Warning (Yellow)</label>
+		<input type="text" id="pulselower_warning" value="50" size="6" disabled></input>
+		<input type="checkbox" id="pulselower_warning_cb" checked disabled></input>
+		<div class="clear"></div>
+		<label for="pulselower_critical">Pulse Lower Critical (Red)</label>
+		<input type="text" id="pulselower_critical" value="40" size="6" disabled></input>
+		<input type="checkbox" id="pulselower_critical_cb" checked disabled></input>
+		<div class="clear"></div>
+		<label for="spo2_warning">SpO2 Warning (Yellow)</label>
+		<input type="text" id="spo2_warning" value="95" size="6" disabled></input>
+		<input type="checkbox" id="spo2_warning_cb" checked disabled></input>
+		<div class="clear"></div>
+		<label for="spo2_critical">SpO2 Critical (Red)</label>
+		<input type="text" id="spo2_critical" value="90" size="6" disabled></input>
+		<input type="checkbox" id="spo2_critical_cb" checked disabled></input>
+		<div class="clear"></div>
+	</section>
+	</div>
+</body>
+</html>

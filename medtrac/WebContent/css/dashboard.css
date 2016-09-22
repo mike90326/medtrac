@@ -1,0 +1,108 @@
+.dashboard {
+	margin:0;
+	padding-top:50px;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding-top: 0;
+	margin: 0;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1%;
+}
+.col:first-child { margin-left: 0; }
+
+
+/*  GROUPING  */
+.group:before,
+.group:after {
+	content:"";
+	display:table;
+}
+.group:after {
+	clear:both;
+}
+.group {
+    zoom:1; /* For IE 6/7 */
+}
+
+/*  GRID OF THREE  */
+/*
+.span_3_of_3 {
+	width: 100%;
+}
+.span_2_of_3 {
+	width: 66.1%;
+}
+.span_1_of_3 {
+	width: 32.2%;
+}
+*/
+
+/*  GRID OF FOUR  */
+.span_4_of_4 {
+	width: 100%;
+}
+.span_3_of_4 {
+	width: 74.75%;
+}
+.span_2_of_4 {
+	width: 49.5%;
+}
+.span_1_of_4 {
+	width: 28%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.col { margin: 1% 0 1% 0%;}
+	.span_4_of_4, .span_3_of_4, .span_2_of_4, .span_1_of_4 { width: 100%; }
+}
+
+/*
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+table#t01 th {
+    color: white;
+    background-color: black;
+}
+*/
+
+table, tbody, tr, th, td {
+    border: 1px solid black;
+}
+
+tbody tr {
+	border: 1px solid black;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eee;
+}
+
+.dinput {
+	border: none;
+	background: transparent;
+	font-size: 18px;
+	text-align:center;
+}
+.bedID {
+	border: none;
+	background: blue;
+	font-size: 18px;
+	text-align:center;
+	color: white;
+}

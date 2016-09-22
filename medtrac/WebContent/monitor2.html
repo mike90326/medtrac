@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Monitor Scheduling</title>
+	<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<link href="css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css" />
+	<link href="css/common.css" rel="stylesheet" type="text/css" />
+	<link href="css/monitor2.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<!--#include file="navbar.html" -->
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<!-- <script src="js/modernizr-custom.js"></script> -->
+	<script src="js/jquery-ui-timepicker-addon.js"></script>
+	<script src="js/searchpatient.js"></script>
+	<script src="js/common.js"></script>
+    <script src="js/monitor.js"></script>
+    <script src="js/monitor2.js"></script>
+	
+	<div id="monitor2" class="content">
+	<section>
+		<h2>Manual Monitoring</h2>
+		<!-- Start test immediately (For Testing) <button type="button" id="start_test" onclick="start_test()">Start Test</button><br>  -->
+		<form name="schedule_form" onsubmit="apply()">
+			<label for="box_id_monitor">Medbox ID:</label>
+			<select class="select" id="box_id_monitor" required>
+				<option value="40a36bc10566">A</option>
+				<option value="40a36bc1055b">B</option>
+				<option value="40a36bc10567">C</option>
+				<option value="40a36bc10568">D</option>
+				<option value="40a36bc1055a">E</option>
+			</select>
+		<div class="clear"></div>
+		<label for="patient_id">Enter Patient ID:</label>
+		<select class="select" id="patient_id" onclick="search_patient('patient_id'); this.onclick=null;" required></select>
+		<button type="button" class="button" id="save_and_apply" onclick="apply()">Update Patient ID</button><br><br>
+		<button type="button" class="button" id="start_room1" onclick="start_room_1()">Start Measuring</button><br>
+		<div class="clear"></div><br>
+	</section>
+		<table class="tg">
+		<caption style="text-align:left">Measurement Data</caption>
+		  <tr>
+		    <th class="tg-yw4l">Medbox ID<br></th>
+		    <th class="tg-yw4l">Patient_ID<br></th>
+		    <th class="tg-yw4l">DateTime<br></th>
+		    <th class="tg-yw4l">Temperature<br></th>
+		    <th class="tg-yw4l">BP Systolic</th>
+		    <th class="tg-yw4l">BP Diastolic<br></th>
+		    <th class="tg-yw4l">Pulse<br></th>
+		    <th class="tg-yw4l">SpO2<br></th>
+		  </tr>
+		  <tr>
+		    <td class="tg-yw4l" id="40a36bc10566">A</td>
+			<td class="tg-yw41" id="patient_1" ></td>
+		    <td class="tg-yw4l" id="time_1" ></td>
+		    <td class="tg-yw4l" id="temp_1" ></td>
+		    <td class="tg-yw4l" id="bph_1"></td>
+		    <td class="tg-yw4l" id="bpl_1"></td>
+		    <td class="tg-yw4l" id="pulse_1"></td>
+		    <td class="tg-yw4l" id="spo2_1"></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-yw4l" id="40a36bc1055b">B</td>
+		    <td class="tg-yw4l" id="patient_2" ></td>
+		    <td class="tg-yw4l" id="time_2" ></td>
+		    <td class="tg-yw4l" id="temp_2" ></td>
+		    <td class="tg-yw4l" id="bph_2"></td>
+		    <td class="tg-yw4l" id="bpl_2"></td>
+		    <td class="tg-yw4l" id="pulse_2"></td>
+		    <td class="tg-yw4l" id="spo2_2"></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-yw4l" id="40a36bc10567">C</td>
+		    <td class="tg-yw4l" id="patient_3" ></td>
+		    <td class="tg-yw4l" id="time_3" ></td>
+		    <td class="tg-yw4l" id="temp_3" ></td>
+		    <td class="tg-yw4l" id="bph_3"></td>
+		    <td class="tg-yw4l" id="bpl_3"></td>
+		    <td class="tg-yw4l" id="pulse_3"></td>
+		    <td class="tg-yw4l" id="spo2_3"></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-yw4l" id="40a36bc10568">D</td>
+		    <td class="tg-yw4l" id="patient_4" ></td>
+		    <td class="tg-yw4l" id="time_4" ></td>
+		    <td class="tg-yw4l" id="temp_4" ></td>
+		    <td class="tg-yw4l" id="bph_4"></td>
+		    <td class="tg-yw4l" id="bpl_4"></td>
+		    <td class="tg-yw4l" id="pulse_4"></td>
+		    <td class="tg-yw4l" id="spo2_4"></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-yw4l" id="40a36bc1055a">E</td>
+		    <td class="tg-yw4l" id="patient_5" ></td>
+		    <td class="tg-yw4l" id="time_5" ></td>
+		    <td class="tg-yw4l" id="temp_5" ></td>
+		    <td class="tg-yw4l" id="bph_5"></td>
+		    <td class="tg-yw4l" id="bpl_5"></td>
+		    <td class="tg-yw4l" id="pulse_5"></td>
+		    <td class="tg-yw4l" id="spo2_5"></td>
+		  </tr>
+		</table>
+	</div>
+    <script>
+		get_active_schedule()
+	</script>
+</body>
+</html>

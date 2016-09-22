@@ -1,0 +1,34 @@
+
+#rightmenu
+{
+	position: fixed;
+	width: 250px;
+	height: 100%;
+	top: 51px;
+	left: 99%;
+	/* Chrome */background: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#ccc));
+	/* Firefox */ background: -moz-linear-gradient(top,  #ccc,  #fff);
+	/* IE */ background: linear-gradient(to bottom, #ccc, #fff);
+	border-radius: 6px;
+	box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.4);
+	padding: 5px 5px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+#rightmenu, #rightmenu *
+{
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+
+#rightmenu:hover {
+  left: 99%;
+}
+
+#rightmenu.show {
+  left: calc(100% - 250px);
+}

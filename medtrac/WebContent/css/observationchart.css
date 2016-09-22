@@ -1,0 +1,17 @@
+.templine {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.pulseline {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.spo2line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}

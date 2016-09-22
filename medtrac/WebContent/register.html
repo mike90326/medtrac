@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+	<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<link href="css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css" />
+	<link href="css/common.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<!--#include file="navbar.html" -->
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<!-- <script src="js/modernizr-custom.js"></script> -->
+	<script src="js/jquery-ui-timepicker-addon.js"></script>
+	<script src="js/common.js"></script>
+	<script>
+		check_login();
+	</script>
+	<script>
+    	$(function() {
+        	$( "#date_of_birth" ).datepicker({ 
+        		dateFormat: 'yy-mm-dd',
+        		changeMonth: true,
+                changeYear: true,
+                yearRange: '1900:',
+                defaultDate: "1980-01-01"
+            });
+        	$( "#registration_date" ).datetimepicker({
+        		dateFormat: 'yy-mm-dd',
+         		controlType: 'select',
+        		oneLine: true,
+       		});
+        });
+    </script>
+	<div class='content'>
+	<section>
+		<h2>Register Patient</h2>
+		<form name="register_form" onsubmit="registering()">
+	 		<label for="patient_name">Enter Patient Name:</label>
+	 		<input type="text" class="input" id="patient_name" value="" size="15" required></input>
+	 		<div class="clear"></div>
+	 		<label for="patient_id">Enter Patient ID:</label>
+	 		<input type="text" class="input" id="patient_id" value="" size="15" required></input>
+			<div class="clear"></div>	 		
+	 		<br>
+	 		<input type="submit" class="button" id="register" value="Register" ></input><br>
+ 			</form>
+ 		</section>
+	</div>
+	<script src="js/register.js"></script>
+</body>
+</html>

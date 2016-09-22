@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>System Configuration</title>
+	<link href="css/common.css" rel="stylesheet" type="text/css" />
+	<link href="css/medboxstatus.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<!--#include file="navbar.html" -->
+	<script src="js/common.js"></script>
+	<script>
+		check_login();
+	</script>
+	<div id="medboxstatus" class="content">
+	<section>
+		<h1>Medbox Status</h1>
+		<button type="button" id="medbox_status" onclick="get_medbox_status()" style='font-size:18px'>Refresh Medbox Status</button>
+		<span id="device_list"></span>
+	</section>
+	<table class="tg">
+	  <tr>
+	    <th class="tg-yw4l">Medbox ID<br></th>
+	    <th class="tg-yw4l">Bed<br></th>
+	    <th class="tg-yw4l">IP Address<br></th>
+	    <th class="tg-yw4l">Network</th>
+	    <th class="tg-yw4l">BP Sensor<br></th>
+	    <th class="tg-yw4l">O2 Sensor<br></th>
+	    <th class="tg-yw4l">Temp Sensor<br></th>
+	  </tr>
+	  <tr>
+	    <td class="tg-yw4l" id="40a36bc10566">40a36bc10566</td>
+	    <td class="tg-yw4l" id="bed_1" >985</td>
+	    <td class="tg-yw4l" id="ipaddr_1"></td>
+	    <td class="tg-yw4l" id="tcp_1"></td>
+	    <td class="tg-yw4l" id="bpsens_1"></td>
+	    <td class="tg-yw4l" id="o2sens_1"></td>
+	    <td class="tg-yw4l" id="tempsens_1"></td>
+	  </tr>
+	  <tr>
+	    <td class="tg-yw4l" id="40a36bc1055b">40a36bc1055b</td>
+	    <td class="tg-yw4l" id="bed_2" >990</td>
+	    <td class="tg-yw4l" id="ipaddr_2"></td>
+	    <td class="tg-yw4l" id="tcp_2"></td>
+	    <td class="tg-yw4l" id="bpsens_2"></td>
+	    <td class="tg-yw4l" id="o2sens_2"></td>
+	    <td class="tg-yw4l" id="tempsens_2"></td>
+	  </tr>
+	  <tr>
+	    <td class="tg-yw4l" id="40a36bc10567">40a36bc10567</td>
+	    <td class="tg-yw4l" id="bed_3" >977</td>
+	    <td class="tg-yw4l" id="ipaddr_3"></td>
+	    <td class="tg-yw4l" id="tcp_3"></td>
+	    <td class="tg-yw4l" id="bpsens_3"></td>
+	    <td class="tg-yw4l" id="o2sens_3"></td>
+	    <td class="tg-yw4l" id="tempsens_3"></td>
+	  </tr>
+	  <tr>
+	    <td class="tg-yw4l" id="40a36bc10568">40a36bc10568</td>
+	    <td class="tg-yw4l" id="bed_4" >980</td>
+	    <td class="tg-yw4l" id="ipaddr_4"></td>
+	    <td class="tg-yw4l" id="tcp_4"></td>
+	    <td class="tg-yw4l" id="bpsens_4"></td>
+	    <td class="tg-yw4l" id="o2sens_4"></td>
+	    <td class="tg-yw4l" id="tempsens_4"></td>
+	  </tr>
+	  <tr>
+	    <td class="tg-yw4l" id="40a36bc1055a">40a36bc1055a</td>
+	    <td class="tg-yw4l" id="bed_5" >988</td>
+	    <td class="tg-yw4l" id="ipaddr_5"></td>
+	    <td class="tg-yw4l" id="tcp_5"></td>
+	    <td class="tg-yw4l" id="bpsens_5"></td>
+	    <td class="tg-yw4l" id="o2sens_5"></td>
+	    <td class="tg-yw4l" id="tempsens_5"></td>
+	  </tr>
+	</table>
+	</div>
+	<script src="js/medboxstatus.js"></script>
+</body>
+</html>
